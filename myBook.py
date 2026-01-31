@@ -1,11 +1,15 @@
 import tkinter as tk
 
 # Test pages
-pages = [
-    "First Page",
-    "Second Page",
-    "Third Page"
-]
+# pages = [
+#     "First Page",
+#     "Second Page",
+#     "Third Page"
+# ]
+
+# Put personal book.txt in the same directory
+with open("book.txt") as f:     # Change name as necessary
+    pages = f.read().split("\n\n---\n\n")
 
 current_page = 0                # Current page is instantiated to 0
 
