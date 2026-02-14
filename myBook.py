@@ -21,8 +21,9 @@ def resource_path(relative_path):   # Install as an executable
     return os.path.join(base_path, relative_path)
 
 # Put personal book.txt in the same directory
-with open("data/sample.txt") as f:    # Change name as necessary
+with open(resource_path("data/sample.txt"), encoding="utf-8") as f: # Change name as necessary
     pages = f.read().split("\n\n---\n\n")
+
 
 current_page = 0                # Current page is instantiated to 0
 
@@ -49,7 +50,7 @@ book.geometry("1000x600")       # Determine window size
 canvas = tk.Canvas(book, width = 1000, height = 600, highlightthickness = 0)
 canvas.pack(fill = "both", expand = True)
 
-bg_img = Image.open("data/bookBG.png")  # Add background image here
+bg_img = Image.open(resource_path("data/bookBG.png")) # Add background image here
 bg_img = bg_img.resize((1000, 600))
 bg_photo = ImageTk.PhotoImage(bg_img)
 
